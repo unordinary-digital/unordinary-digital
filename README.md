@@ -1,14 +1,13 @@
 # unordinary.digital
 
-Static site served by Cloudflare Workers (static assets). No build step.
+Static site served by Cloudflare Pages. No build step.
 
 ## Deploy
-Cloudflare Workers Builds is connected to this repo: every push to `main` deploys the `unordinary-digital` Worker using `wrangler.jsonc`.
+The Cloudflare Pages project `unordinary-digital` is connected to this repo: every push to `main` deploys the site.
 
 - Build command: none
-- Deploy command: `npx wrangler deploy`
-- Files that shouldn't be served (config, README) are listed in `.assetsignore`.
-- Unknown URLs serve `404.html`, which sends visitors to the homepage.
+- Build output directory: `public`
+- Only files inside `public/` are published. Unknown URLs serve `public/404.html`, which sends visitors to the homepage.
 
 ## Notes
 - Hidden pages (print, social, google-business-profile) are included and reachable by direct link only.

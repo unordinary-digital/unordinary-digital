@@ -1,8 +1,0 @@
-.git
-.assetsignore
-.gitignore
-.nojekyll
-wrangler.jsonc
-README.md
-**/.DS_Store
-CNAME
