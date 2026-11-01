@@ -331,7 +331,12 @@ function Finale({
     "data-feather": "instagram"
   }), "@unordinary.digital"))), React.createElement("div", {
     className: "foot-small wrap"
-  }, React.createElement("span", null, "\xA9 2026 unordinary. digital")));
+  }, React.createElement("span", {
+    className: "foot-legal"
+  }, React.createElement("span", null, "\xA9 2026 unordinary. digital"), React.createElement("a", {
+    href: "privacy.html",
+    "data-transition": true
+  }, "Privacy policy"))));
 }
 function letterGlow() {
   if (!matchMedia('(pointer:fine)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return () => {};

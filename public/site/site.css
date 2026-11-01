@@ -247,3 +247,12 @@ a{color:var(--charcoal);text-decoration:none}a:hover{color:var(--charcoal)}
 .hs{height:auto}.hs-in{position:static;height:auto;padding:14vh 0}.track{width:auto;flex-direction:column;gap:16px}.tile{width:auto;aspect-ratio:auto;min-height:260px}
 .hero{min-height:88vh}.nav-links .mag{display:none}
 }
+.prose{max-width:72ch;padding-bottom:16vh;font-size:var(--text-base);line-height:1.65}
+.prose h2{font-size:clamp(22px,2vw,30px);line-height:1.15;font-weight:800;letter-spacing:-.01em;margin:56px 0 16px}
+.prose p,.prose ul{margin:0 0 16px}
+.prose ul{padding-left:1.2em}
+.prose li{margin-bottom:8px}
+.prose a{text-decoration:underline;text-decoration-color:var(--orange);text-underline-offset:4px;word-break:break-word}
+.foot-legal{display:inline-flex;gap:20px;flex-wrap:wrap}
+.foot-legal a{color:inherit}
+.foot-legal a:hover{color:inherit;text-decoration:underline;text-underline-offset:4px}
