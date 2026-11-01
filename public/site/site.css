@@ -256,3 +256,4 @@ a{color:var(--charcoal);text-decoration:none}a:hover{color:var(--charcoal)}
 .foot-legal{display:inline-flex;gap:20px;flex-wrap:wrap}
 .foot-legal a{color:inherit}
 .foot-legal a:hover{color:inherit;text-decoration:underline;text-underline-offset:4px}
+.prose mark{background:var(--orange);color:#1a1a1a;padding:0 4px;border-radius:3px}
