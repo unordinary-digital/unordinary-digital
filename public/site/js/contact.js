@@ -1,23 +1,53 @@
+const FORMSPREE_URL = 'https://formspree.io/f/xrppyyek';
 function ContactForm() {
   const [f, setF] = React.useState({
     name: '',
     email: '',
     biz: '',
     need: 'Website',
-    more: ''
+    more: '',
+    gotcha: ''
   });
   const [err, setErr] = React.useState({});
   const [sent, setSent] = React.useState(false);
+  const [sending, setSending] = React.useState(false);
+  const [failed, setFailed] = React.useState(false);
   const set = k => v => setF(s => ({
     ...s,
     [k]: v
   }));
-  const submit = () => {
+  const submit = async () => {
     const e = {};
     if (!f.name.trim()) e.name = 'Tell us your name.';
     if (!/^\S+@\S+\.\S+$/.test(f.email)) e.email = 'We need an email we can reply to.';
     setErr(e);
-    if (!Object.keys(e).length) setSent(true);
+    if (Object.keys(e).length || sending) return;
+    setSending(true);
+    setFailed(false);
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          name: f.name,
+          email: f.email,
+          business: f.biz,
+          need: f.need,
+          message: f.more,
+          _subject: `New enquiry: ${f.need} from ${f.name}`,
+          _gotcha: f.gotcha
+        })
+      });
+      if (!res.ok) throw new Error(res.status);
+      setSent(true);
+    } catch (_) {
+      setFailed(true);
+    } finally {
+      setSending(false);
+    }
   };
   if (sent) return React.createElement("div", {
     className: "sent"
@@ -56,11 +86,24 @@ function ContactForm() {
     className: "ta",
     value: f.more,
     onChange: e => set('more')(e.target.value)
-  })), React.createElement("div", null, React.createElement(UD.Button, {
+  })), React.createElement("input", {
+    className: "hp",
+    tabIndex: -1,
+    autoComplete: "off",
+    "aria-hidden": "true",
+    value: f.gotcha,
+    onChange: e => set('gotcha')(e.target.value)
+  }), React.createElement("div", null, React.createElement(UD.Button, {
     variant: "accent",
     size: "lg",
+    disabled: sending,
     onClick: submit
-  }, "Send it")));
+  }, sending ? "Sending…" : "Send it"), failed && React.createElement("p", {
+    className: "send-err",
+    role: "alert"
+  }, "That didn't send. Try again, or email ", React.createElement("a", {
+    href: "mailto:hello@unordinary.digital"
+  }, "hello@unordinary.digital"), ".")));
 }
 function Contact() {
   return React.createElement(Page, {
