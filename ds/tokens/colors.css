@@ -1,0 +1,23 @@
+:root{
+--charcoal:#454545;
+--white:#ffffff;
+--light-grey:#ebebeb;
+--orange:#ff991c;
+--orange-hover:color-mix(in oklch,var(--orange) 88%,black);
+--orange-press:color-mix(in oklch,var(--orange) 76%,black);
+--charcoal-hover:color-mix(in oklch,var(--charcoal) 88%,black);
+--charcoal-press:color-mix(in oklch,var(--charcoal) 76%,black);
+--border-subtle:color-mix(in oklch,var(--charcoal) 14%,white);
+--border-strong:color-mix(in oklch,var(--charcoal) 30%,white);
+--overlay-scrim:color-mix(in oklch,var(--charcoal) 55%,transparent);
+--surface-page:var(--white);
+--surface-panel:var(--light-grey);
+--surface-dark:var(--charcoal);
+--text-primary:var(--charcoal);
+--text-muted:color-mix(in oklch,var(--charcoal) 65%,white);
+--text-on-dark:var(--white);
+--text-on-dark-muted:color-mix(in oklch,var(--white) 70%,var(--charcoal));
+--accent:var(--orange);
+--accent-contrast:var(--charcoal);
+--focus-ring:var(--orange);
+}

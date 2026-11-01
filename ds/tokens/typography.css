@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700;800&family=Quicksand:wght@300;400;500;600&display=swap');
+:root{
+--font-display:'Barlow',sans-serif;
+--font-body:'Quicksand',sans-serif;
+--weight-heading:700;
+--weight-heading-strong:800;
+--weight-body:300;
+--weight-body-medium:500;
+--weight-ui:500;
+--text-xs:0.8125rem;
+--text-sm:0.9375rem;
+--text-base:1.0625rem;
+--text-lg:1.25rem;
+--text-xl:1.5rem;
+--text-2xl:2rem;
+--text-3xl:2.75rem;
+--text-4xl:3.75rem;
+--text-5xl:5rem;
+--leading-tight:1.1;
+--leading-heading:1.15;
+--leading-body:1.6;
+--leading-relaxed:1.7;
+--tracking-heading:-0.01em;
+}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-display);font-weight:var(--weight-heading);line-height:var(--leading-heading);letter-spacing:var(--tracking-heading);margin:0}
+body{font-family:var(--font-body);font-weight:var(--weight-body);line-height:var(--leading-body);color:var(--text-primary)}
+p{margin:0}

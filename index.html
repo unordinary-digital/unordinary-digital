@@ -1,151 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB" data-theme="dark">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>unordinary.digital | Web, Video, Animation, Print, Design, SEO - Liverpool - Coming soon</title>  
-<meta name="description" content="A Liverpool studio building websites and editing video for small businesses. Coming soon - leave your email to hear when we launch.">
-<link rel="icon" href="favicon.ico">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@700;800&family=Quicksand:wght@300;400;500;600&display=swap">
-<script src="https://unpkg.com/feather-icons"></script>
-<style>
-  :root{
-    --charcoal:#454545;
-    --white:#ffffff;
-    --orange:#ff991c;
-    --orange-hover:color-mix(in oklch,var(--orange) 88%,black);
-    --text-on-dark:var(--white);
-    --text-on-dark-muted:color-mix(in oklch,var(--white) 70%,var(--charcoal));
-    --font-display:'Barlow',sans-serif;
-    --font-body:'Quicksand',sans-serif;
-    --radius-md:8px;
-    --radius-pill:999px;
-    --space-2:8px;
-    --space-3:12px;
-    --space-4:16px;
-    --space-5:20px;
-    --space-6:24px;
-    --space-8:32px;
-    --space-12:48px;
-    --leading-relaxed:1.7;
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;height:100%;background:var(--charcoal);}
-  h1{font-family:var(--font-display);font-weight:800;line-height:1.15;letter-spacing:-0.01em;margin:0;}
-  p{margin:0;}
-  a{color:var(--orange);text-decoration:none;}
-  a:hover{color:var(--orange-hover);text-decoration:underline;}
-  @keyframes driftA{0%{transform:translate(-6%,-4%) rotate(-2deg);}50%{transform:translate(4%,3%) rotate(1deg);}100%{transform:translate(-6%,-4%) rotate(-2deg);}}
-  @keyframes driftB{0%{transform:translate(5%,4%) rotate(1deg);}50%{transform:translate(-4%,-5%) rotate(-2deg);}100%{transform:translate(5%,4%) rotate(1deg);}}
-  @keyframes pulseDot{0%,100%{opacity:0.55;}50%{opacity:1;}}
-
-  .tag{
-    display:inline-flex;align-items:center;
-    font-family:var(--font-body);font-weight:500;font-size:0.9375rem;
-    color:var(--text-on-dark);
-    background:color-mix(in oklch, var(--white) 12%, transparent);
-    border-radius:var(--radius-pill);
-    padding:6px 16px;
-  }
-  .cta-btn{
-    font-family:var(--font-body);font-weight:600;font-size:0.9375rem;
-    background:var(--orange);color:var(--charcoal);border:none;
-    border-radius:var(--radius-md);padding:12px 20px;cursor:pointer;
-  }
-  .cta-btn:hover{background:var(--orange-hover);}
-  .email-input{
-    flex:1 1 220px;font-family:var(--font-body);font-size:0.9375rem;
-    padding:12px 16px;border-radius:var(--radius-md);
-    border:1px solid var(--text-on-dark-muted);background:transparent;
-    color:var(--text-on-dark);outline:none;
-  }
-  .email-input::placeholder{color:var(--text-on-dark-muted);}
-</style>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WXRPZ5MQ');</script>
-<!-- End Google Tag Manager -->
+<script>(function(){try{var t=localStorage.getItem('ud-theme');if(!t)t='dark';document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Web Design &amp; Video Studio, Liverpool | unordinary. digital</title>
+<meta name="description" content="Liverpool studio for web design, video editing and motion graphics. Clear pricing, plain English and a reply within one working day. Get a quote.">
+<link rel="stylesheet" href="ds/tokens/colors.css">
+<link rel="stylesheet" href="ds/tokens/typography.css">
+<link rel="stylesheet" href="ds/tokens/spacing.css">
+<link rel="stylesheet" href="ds/tokens/motion.css">
+<link rel="stylesheet" href="ds/motion/motion.css">
+<link rel="stylesheet" href="ds/styles.css">
+<link rel="stylesheet" href="site/site.css">
+<script src="site/vendor/react.js"></script>
+<script src="site/vendor/react-dom.js"></script>
+<script src="site/vendor/feather.js"></script>
+<script src="ds/_ds_bundle.js"></script>
+<script src="site/motion.js"></script>
+<script src="site/js/slots.js"></script>
 </head>
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXRPZ5MQ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<div style="position:relative;width:100%;min-height:100vh;background:var(--charcoal);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:var(--space-8) var(--space-6);">
-
-  <div style="position:absolute;inset:0;z-index:0;background:#2b2b2b;"></div>
-
-  <div style="position:absolute;inset:-10%;pointer-events:none;user-select:none;z-index:1;">
-    <div style="position:absolute;top:8%;left:-8%;font-family:var(--font-display);font-weight:800;font-size:min(28vw,420px);color:var(--white);opacity:0.035;white-space:nowrap;animation:driftA 34s ease-in-out infinite;">unordinary.</div>
-    <div style="position:absolute;bottom:2%;right:-14%;font-family:var(--font-display);font-weight:800;font-size:min(22vw,340px);color:var(--white);opacity:0.035;white-space:nowrap;animation:driftB 40s ease-in-out infinite;">digital</div>
-  </div>
-
-  <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:640px;gap:var(--space-8);">
-
-    <img src="logo-white.png" alt="unordinary.digital" style="width:180px;height:auto;">
-
-    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-4);">
-      <span style="font-family:var(--font-body);font-weight:600;font-size:0.9375rem;color:var(--orange);letter-spacing:0.02em;">Coming soon</span>
-      <h1 style="color:var(--text-on-dark);font-size:2.75rem;max-width:15.5em;">We take the stress out of managing your digital & online presence</h1>
-      <p style="font-family:var(--font-body);color:var(--text-on-dark-muted);font-size:1.25rem;max-width:34em;line-height:var(--leading-relaxed);">unordinary.digital builds websites, edits video, and handles the stuff around both. Leave your email and we'll tell you when the doors open.</p>
-    </div>
-
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-2);">
-      <span class="tag">Web</span>
-      <span class="tag">Video</span>
-      <span class="tag">Animation</span>
-      <span class="tag">SEO</span>
-      <span class="tag">Print</span>
-    </div>
-
-    <form id="signup-form" action="https://formspree.io/f/xgawlpjk" method="POST" style="display:flex;flex-wrap:wrap;gap:var(--space-3);width:100%;max-width:420px;justify-content:center;">
-  <input id="email-input" name="email" class="email-input" type="email" required placeholder="your@email.com">
-  <button type="submit" class="cta-btn">Notify me</button>
-</form>
-
-<div id="signup-done" style="display:none;align-items:center;gap:var(--space-2);font-family:var(--font-body);color:var(--text-on-dark);font-weight:600;font-size:1.0625rem;">
-  <span style="width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pulseDot 1.6s ease-in-out infinite;"></span>
-  You're on the list. We'll be in touch.
-</div>
-  </div>
-  
-  <div style="position:relative;z-index:2;margin-top:var(--space-12);display:flex;align-items:center;gap:var(--space-5);font-family:var(--font-body);color:var(--text-on-dark-muted);font-size:0.9375rem;">
-    <a href="https://www.instagram.com/unordinary.digital/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:var(--text-on-dark-muted);">
-      <i data-feather="instagram" style="width:16px;height:16px;"></i>
-      Instagram
-    </a>
-    <span style="opacity:0.4;">·</span>
-    <a href="mailto:hello@unordinary.digital" style="color:var(--text-on-dark-muted);">hello@unordinary.digital</a>
-  </div>
-
-</div>
-
-<script>
-  if (window.feather) feather.replace();
-
-  const form = document.getElementById('signup-form');
-  const done = document.getElementById('signup-done');
-
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    const email = document.getElementById('email-input').value;
-    if (!email) return;
-
-    try {
-      await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      form.style.display = 'none';
-      done.style.display = 'flex';
-    } catch (err) {
-      alert('Something went wrong, please try again.');
-    }
-  });
-</script>
+<body data-cursor>
+<div id="root"></div>
+<script src="site/js/shared.js"></script>
+<script src="site/js/home.js"></script>
 </body>
 </html>
