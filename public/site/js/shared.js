@@ -336,7 +336,11 @@ function Finale({
   }, React.createElement("span", null, "\xA9 2026 unordinary. digital"), React.createElement("a", {
     href: "privacy.html",
     "data-transition": true
-  }, "Privacy policy"))));
+  }, "Privacy policy"), React.createElement("button", {
+    type: "button",
+    className: "foot-link",
+    onClick: openConsent
+  }, "Cookie settings"))));
 }
 function letterGlow() {
   if (!matchMedia('(pointer:fine)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return () => {};
@@ -404,6 +408,58 @@ function letterGlow() {
     document.removeEventListener('mouseleave', out);
   };
 }
+const readConsent = () => {
+  try {
+    return localStorage.getItem('ud-consent');
+  } catch (e) {
+    return null;
+  }
+};
+const openConsent = () => dispatchEvent(new Event('ud-consent-open'));
+function setConsent(granted) {
+  try {
+    localStorage.setItem('ud-consent', granted ? 'granted' : 'denied');
+  } catch (e) {}
+  gtag('consent', 'update', {
+    analytics_storage: granted ? 'granted' : 'denied'
+  });
+  if (granted) dataLayer.push({
+    event: 'ud_consent_granted'
+  });
+  else document.cookie.split(';').map(c => c.split('=')[0].trim()).filter(n => n.startsWith('_ga')).forEach(n => {
+    const host = location.hostname;
+    document.cookie = `${n}=; Max-Age=0; path=/`;
+    document.cookie = `${n}=; Max-Age=0; path=/; domain=.${host.replace(/^www\./, '')}`;
+  });
+}
+function ConsentBanner() {
+  const [open, setOpen] = React.useState(() => !readConsent());
+  React.useEffect(() => {
+    const on = () => setOpen(true);
+    addEventListener('ud-consent-open', on);
+    return () => removeEventListener('ud-consent-open', on);
+  }, []);
+  if (!open) return null;
+  const choose = granted => () => {
+    setConsent(granted);
+    setOpen(false);
+  };
+  return React.createElement("div", {
+    className: "consent",
+    role: "dialog",
+    "aria-label": "Cookie choices"
+  }, React.createElement("p", null, "Can we use analytics cookies? They tell us which pages people find useful. Nothing is set unless you say yes. ", React.createElement("a", {
+    href: "privacy.html"
+  }, "Privacy policy")), React.createElement("div", {
+    className: "consent-btns"
+  }, React.createElement(UD.Button, {
+    variant: "secondary",
+    onClick: choose(false)
+  }, "No thanks"), React.createElement(UD.Button, {
+    variant: "secondary",
+    onClick: choose(true)
+  }, "Accept")));
+}
 function Page({
   current,
   children
@@ -435,7 +491,7 @@ function Page({
   }, []);
   return React.createElement(React.Fragment, null, React.createElement(Nav, {
     current: current
-  }), React.createElement("main", null, children));
+  }), React.createElement("main", null, children), React.createElement(ConsentBanner, null));
 }
 function Media({
   id,
@@ -625,6 +681,7 @@ Object.assign(window, {
   Band,
   Finale,
   Page,
+  openConsent,
   mount,
   Media,
   ScrollHero,

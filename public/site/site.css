@@ -257,3 +257,10 @@ a{color:var(--charcoal);text-decoration:none}a:hover{color:var(--charcoal)}
 .foot-legal a{color:inherit}
 .foot-legal a:hover{color:inherit;text-decoration:underline;text-underline-offset:4px}
 .prose mark{background:var(--orange);color:#1a1a1a;padding:0 4px;border-radius:3px}
+.foot-link{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer}
+.foot-link:hover{text-decoration:underline;text-underline-offset:4px}
+.consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:50;margin-left:auto;max-width:460px;box-sizing:border-box;display:grid;gap:16px;padding:20px 22px;border-radius:var(--radius-md);background:var(--charcoal);color:var(--white);box-shadow:0 18px 48px rgba(0,0,0,.28);font-size:var(--text-sm);line-height:1.5}
+.consent a{color:inherit;text-decoration:underline;text-decoration-color:var(--orange);text-underline-offset:3px}
+.consent a:hover{color:inherit}
+.consent-btns{display:flex;gap:12px;flex-wrap:wrap}
+.consent-btns>*{flex:1 1 0}
