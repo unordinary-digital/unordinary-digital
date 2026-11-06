@@ -264,3 +264,6 @@ a{color:var(--charcoal);text-decoration:none}a:hover{color:var(--charcoal)}
 .consent a:hover{color:inherit}
 .consent-btns{display:flex;gap:12px;flex-wrap:wrap}
 .consent-btns>*{flex:1 1 0}
+@media (hover:none),(pointer:coarse),(max-width:900px){.ud-preview{display:none!important}}
+.hero.hero-short{min-height:0;padding-top:clamp(120px,18vh,200px);padding-bottom:6vh}
+.hero-short .hero-foot{margin-top:4vh}

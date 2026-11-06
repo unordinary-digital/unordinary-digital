@@ -15,7 +15,7 @@ function Privacy() {
     current: "privacy.html"
   }, React.createElement(Hero, {
     eyebrow: "Legal",
-    compact: true,
+    short: true,
     cta: false,
     title: "Privacy policy.",
     sub: "Last updated 1 November 2026."

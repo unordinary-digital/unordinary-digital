@@ -186,10 +186,11 @@ function Hero({
   sub,
   cta = true,
   compact,
+  short,
   children
 }) {
   return React.createElement("section", {
-    className: 'hero wrap' + (compact ? ' hero-compact' : '')
+    className: 'hero wrap' + (compact ? ' hero-compact' : '') + (short ? ' hero-short' : '')
   }, eyebrow && React.createElement("p", {
     className: "eyebrow",
     "data-reveal": true
