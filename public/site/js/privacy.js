@@ -20,8 +20,7 @@ function Privacy() {
     title: "Privacy policy.",
     sub: "Last updated 1 November 2026."
   }), React.createElement("section", {
-    className: "prose wrap",
-    "data-reveal": true
+    className: "prose wrap"
   }, POLICY.map(([t, ...rest], i) => t === 'h' ? React.createElement("h2", {
     key: i
   }, rest[0]) : t === 'ul' ? React.createElement("ul", {
