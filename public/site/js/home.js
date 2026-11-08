@@ -88,6 +88,31 @@ function Home() {
       className: "ar-item"
     }, inner));
   })))), React.createElement("section", {
+    className: "sec"
+  }, React.createElement("div", {
+    className: "text-sec"
+  }, React.createElement("div", {
+    className: "sec-head",
+    style: {
+      padding: 0,
+      margin: 0
+    }
+  }, React.createElement("p", {
+    className: "label",
+    "data-reveal": true
+  }, "Retainer"), React.createElement("h2", {
+    className: "h2",
+    "data-split": true
+  }, React.createElement(Dot, null, "Or have us on call."))), React.createElement("div", {
+    className: "copy"
+  }, React.createElement("p", {
+    "data-reveal": true
+  }, "unordinary.assistant is a monthly retainer. Up to 30 hours a month across anything we do, for \xA31,995. One studio, ready when you need it."), React.createElement("a", {
+    className: "tlink",
+    href: "assistant.html",
+    "data-reveal": true,
+    "data-transition": true
+  }, "See unordinary.assistant")))), React.createElement("section", {
     className: "hs",
     "data-hscroll": true
   }, React.createElement("div", {

@@ -1,6 +1,6 @@
 const UD = window.UnordinaryDigitalDesignSystem_709a4c;
-const HIDDEN = ['print.html', 'social.html', 'google-business-profile.html'];
-const SERVICES = [['podcast.html', 'Podcast editing'], ['social.html', 'Social media'], ['graphic.html', 'Graphic design'], ['print.html', 'Print design'], ['google-business-profile.html', 'Google Business Profile']].filter(([h]) => !HIDDEN.includes(h));
+const HIDDEN = [];
+const SERVICES = [['podcast.html', 'Podcast editing'], ['social.html', 'Social media'], ['graphic.html', 'Graphic design'], ['print.html', 'Print design'], ['google-business-profile.html', 'Google Business Profile'], ['assistant.html', 'unordinary.assistant']].filter(([h]) => !HIDDEN.includes(h));
 const NAV = [['website.html', 'Website'], ['video.html', 'Video & Motion'], ...SERVICES, ['liverpool.html', 'Liverpool'], ['contact.html', 'Contact']];
 const MENU = [['website.html', 'Website'], ['video.html', 'Video & Motion']];
 const getTheme = () => document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
