@@ -40,7 +40,7 @@ function Assistant() {
     className: "copy"
   }, React.createElement("p", {
     "data-reveal": true
-  }, "Up to 30 hours of work each month, in any mix of services. Billed monthly in advance. Unused hours are still billed at the full monthly cost. Cancel with 30 days' notice. All prices exclude VAT."), React.createElement("p", {
+  }, "Up to 30 hours of work each month, in any mix of services. Billed monthly in advance. Unused hours are still billed at the full monthly cost. Cancel with 30 days' notice."), React.createElement("p", {
     "data-reveal": true
   }, "Extra hours are \xA350 an hour, and we'll tell you before you go over. Hours are tracked and reported using Clockify.")))), React.createElement("section", {
     className: "sec"
