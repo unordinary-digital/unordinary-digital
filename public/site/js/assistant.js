@@ -8,7 +8,7 @@ function Assistant() {
     eyebrow: "unordinary.assistant",
     ctaLabel: "Get in touch",
     title: "A studio on call.",
-    sub: "One monthly retainer. Up to 30 hours a month, across anything we do.",
+    sub: "One monthly retainer. Up to 120 hours a month (30 hours a week), across anything we do.",
     media: slot('assistant-hero', 'unordinary.assistant')
   }), React.createElement(Statement, null, "Most businesses don't need one big project. They need a steady run of small ones, and someone who already knows the business to pick them up. unordinary.assistant is that. Send the work as it comes up and we get on with it."), React.createElement("section", {
     className: "sec",
@@ -36,11 +36,11 @@ function Assistant() {
   }, "Pricing"), React.createElement("h2", {
     className: "big-h2",
     "data-split": true
-  }, React.createElement(Dot, null, "\xA31,995 a month."))), React.createElement("div", {
+  }, React.createElement(Dot, null, "\xA32,225 a month."))), React.createElement("div", {
     className: "copy"
   }, React.createElement("p", {
     "data-reveal": true
-  }, "Up to 30 hours of work each month, in any mix of services. Billed monthly in advance. Unused hours are still billed at the full monthly cost. Cancel with 30 days' notice."), React.createElement("p", {
+  }, "Up to 120 hours of work each month (30 hours a week), in any mix of services. Billed monthly in advance. Unused hours are still billed at the full monthly cost. Cancel with 30 days' notice."), React.createElement("p", {
     "data-reveal": true
   }, "Extra hours are \xA350 an hour, and we'll tell you before you go over. Hours are tracked and reported using Clockify.")))), React.createElement("section", {
     className: "sec"
@@ -78,7 +78,7 @@ function Assistant() {
     items: steps
   })), React.createElement(Finale, {
     title: "Need a studio on call?",
-    body: "Tell us what you'd want covered each month. We'll tell you whether 30 hours does it.",
+    body: "Tell us what you'd want covered each month. We'll tell you whether 120 hours does it.",
     ctaLabel: "Get in touch"
   }));
 }
