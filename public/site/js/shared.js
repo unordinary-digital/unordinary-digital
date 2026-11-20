@@ -469,10 +469,18 @@ function Page({
     feather.replace({
       'stroke-width': 1.5
     });
-    UDMotion.enter();
-    UDMotion.init(document, {
-      observeDelay: 450
-    });
+    // While the splash screen is playing, skip the page wipe and hold the
+    // reveal animations until the splash has finished.
+    if (document.documentElement.classList.contains('ud-splash-active')) {
+      window.addEventListener('ud:splash:done', () => UDMotion.init(document), {
+        once: true
+      });
+    } else {
+      UDMotion.enter();
+      UDMotion.init(document, {
+        observeDelay: 450
+      });
+    }
     const glowOff = letterGlow();
     const nav = document.getElementById('nav');
     let last = scrollY;
