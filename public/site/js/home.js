@@ -10,7 +10,7 @@ function Home() {
     sub: "We take the stress out of managing your digital and online presence.",
     cta: false,
     after: React.createElement(Band, {
-      items: ['Websites', 'Video', 'Motion Graphics', 'Graphic Design']
+      items: ['Video', 'Motion', 'Web', 'Graphics']
     }),
     media: React.createElement(HeroVid, {
       src: "site/video/home-hero-final.mp4"
