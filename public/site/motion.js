@@ -79,3 +79,53 @@ function replay(el,gap=700){el.classList.remove('is-in');setTimeout(()=>el.class
 window.UDMotion={init,transition,enter,replay,split,reduce:R,autopilot:f=>{S.auto=f;}};
 document.readyState==='loading'?document.addEventListener('DOMContentLoaded',()=>init()):init();
 })();
+
+/* Cursor ring contrast: each letter of the "keep scrolling" ring checks what's
+   behind it (page colour, or the pixels of a video or image) and turns charcoal
+   where the orange would be hard to read on a light background. */
+(()=>{
+const DARK_ON=.4; // relative luminance above which orange text loses contrast
+const cvs=document.createElement('canvas'),ctx=cvs.getContext('2d',{willReadFrequently:true});
+let ring=null,spans=[],frames=new Map(),colours=new Map();
+const lin=c=>{c/=255;return c<=.03928?c/12.92:Math.pow((c+.055)/1.055,2.4);};
+const lum=c=>.2126*lin(c.r)+.7152*lin(c.g)+.0722*lin(c.b);
+const parse=s=>{const m=/rgba?\(([^)]+)\)/.exec(s);if(!m)return null;const p=m[1].split(/[\s,\/]+/).filter(Boolean).map(parseFloat);return {r:p[0],g:p[1],b:p[2],a:p.length>3?p[3]:1};};
+function setup(){
+ring=document.querySelector('.ud-cursor-ring');if(!ring)return false;
+const tp=ring.querySelector('textPath');
+if(!tp.querySelector('tspan')){const t=tp.textContent;tp.textContent='';[...t].forEach(ch=>{const s=document.createElementNS('http://www.w3.org/2000/svg','tspan');s.textContent=ch;tp.appendChild(s);});}
+spans=[...tp.querySelectorAll('tspan')].filter(s=>s.textContent.trim());return true;
+}
+// Colour of a video or image at a screen point, allowing for object-fit: cover.
+function media(el,x,y){
+const w=el.videoWidth||el.naturalWidth,h=el.videoHeight||el.naturalHeight;if(!w||!h)return null;
+let f=frames.get(el);
+if(!f){const W=64,H=Math.max(1,Math.round(64*h/w));cvs.width=W;cvs.height=H;try{ctx.drawImage(el,0,0,W,H);f={W,H,d:ctx.getImageData(0,0,W,H).data};}catch(e){f={fail:true};}frames.set(el,f);}
+if(f.fail)return null;
+const r=el.getBoundingClientRect(),s=Math.max(r.width/w,r.height/h);
+const u=(x-(r.left+(r.width-w*s)/2))/(w*s),v=(y-(r.top+(r.height-h*s)/2))/(h*s);
+if(u<0||u>1||v<0||v>1)return null;
+const i=(Math.min(f.H-1,Math.floor(v*f.H))*f.W+Math.min(f.W-1,Math.floor(u*f.W)))*4;
+return {r:f.d[i],g:f.d[i+1],b:f.d[i+2]};
+}
+function bgAt(x,y){
+let el=document.elementFromPoint(x,y);
+while(el&&el!==document.documentElement){
+if(el.tagName==='VIDEO'||el.tagName==='IMG'){const c=media(el,x,y);if(c)return c;}
+let c=colours.get(el);if(c===undefined){c=parse(getComputedStyle(el).backgroundColor);c=c&&c.a>.5?c:null;colours.set(el,c);}
+if(c)return c;
+el=el.parentElement;
+}
+return parse(getComputedStyle(document.body).backgroundColor)||{r:255,g:255,b:255};
+}
+function tick(){
+if(!ring&&!setup())return;
+const cur=ring.parentElement;
+if(!cur.classList.contains('is-hint')||cur.classList.contains('is-hint-quiet'))return;
+frames.clear();colours.clear();
+spans.forEach(s=>{const b=s.getBoundingClientRect();const x=b.left+b.width/2,y=b.top+b.height/2;
+if(!b.width||x<0||y<0||x>=innerWidth||y>=innerHeight)return;
+s.classList.toggle('is-dark',lum(bgAt(x,y))>DARK_ON);});
+}
+setInterval(tick,100);
+})();
