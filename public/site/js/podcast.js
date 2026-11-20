@@ -9,7 +9,7 @@ function Podcast() {
     title: "Podcast editing that makes you sound good.",
     sub: "Audio only, or audio and video. Clean sound, tidy cuts and the same people every episode.",
     media: React.createElement(HeroVid, {
-      src: "site/video/podcast-hero.mp4"
+      src: "site/video/podcast-hero-v2.mp4"
     })
   }), React.createElement(Statement, null, "A good podcast shouldn't sound like it was recorded in a stairwell, or cost its host a weekend to edit. Send us the recording and we'll turn it into an episode you're happy to publish. Then we do it again next week."), React.createElement("section", {
     className: "sec",
