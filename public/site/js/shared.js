@@ -469,12 +469,11 @@ function Page({
     feather.replace({
       'stroke-width': 1.5
     });
-    // While the splash screen is playing, skip the page wipe and hold the
-    // reveal animations until the splash has finished.
+    // While the splash screen is playing, skip the page wipe and start the
+    // reveal animations straight away, so they finish underneath the splash
+    // and the hero text is already in place when it lifts.
     if (document.documentElement.classList.contains('ud-splash-active')) {
-      window.addEventListener('ud:splash:done', () => UDMotion.init(document), {
-        once: true
-      });
+      UDMotion.init(document);
     } else {
       UDMotion.enter();
       UDMotion.init(document, {
