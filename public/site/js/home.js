@@ -8,17 +8,14 @@ function Home() {
     big: true,
     title: "We are unordinary.",
     sub: "We take the stress out of managing your digital and online presence.",
+    cta: false,
     after: React.createElement(Band, {
       items: ['Websites', 'Video', 'Motion Graphics', 'Graphic Design']
     }),
     media: React.createElement(HeroVid, {
       src: "site/video/home-hero-final.mp4"
     })
-  }, React.createElement("a", {
-    className: "tlink",
-    href: "website.html#packages",
-    "data-transition": true
-  }, "See website pricing")), React.createElement("section", {
+  }), React.createElement("section", {
     className: "sec",
     style: {
       paddingBottom: 0
