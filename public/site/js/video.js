@@ -105,7 +105,7 @@ function Video() {
     className: "label",
     "data-reveal": true
   }, "Good for")), React.createElement(Band, {
-    items: ['Instagram Reels and Stories', 'TikTok and YouTube Shorts', 'YouTube and long-form', 'Promo and brand films', 'Testimonials and case studies', 'Animated logos and titles']
+    items: ['Long form', 'Social', 'Promo & brand', 'Case studies']
   })), React.createElement("section", {
     className: "sec"
   }, React.createElement(SecHead, {
