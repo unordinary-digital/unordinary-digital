@@ -268,8 +268,11 @@ a{color:var(--charcoal);text-decoration:none}a:hover{color:var(--charcoal)}
 .hero.hero-short{min-height:0;padding-top:clamp(120px,18vh,200px);padding-bottom:6vh}
 .hero-short .hero-foot{margin-top:4vh}
 /* Cursor: circular "keep scrolling" text while an expanding hero is still opening */
-.ud-cursor-ring{position:absolute;left:-52px;top:-52px;width:104px;height:104px;opacity:0;transform:scale(.6);transition:opacity var(--duration-base) var(--ease-standard),transform var(--duration-medium) var(--ease-out-expo);pointer-events:none}
-.ud-cursor.is-hint .ud-cursor-ring{opacity:1;transform:none}
+/* Hidden by default; fades out slowly once the section below the hero comes into view */
+.ud-cursor-ring{position:absolute;left:-52px;top:-52px;width:104px;height:104px;opacity:0;transform:scale(.85);transition:opacity 1.6s var(--ease-standard),transform 1.6s var(--ease-standard);pointer-events:none}
+.ud-cursor.is-hint .ud-cursor-ring{opacity:1;transform:none;transition:opacity var(--duration-base) var(--ease-standard),transform var(--duration-medium) var(--ease-out-expo)}
+/* Over links, buttons and labelled areas it gets out of the way quickly */
+.ud-cursor.is-hint.is-hint-quiet .ud-cursor-ring{opacity:0;transform:scale(.6)}
 .ud-cursor-ring svg{width:100%;height:100%;display:block;overflow:visible;animation:ud-ring-spin 9s linear infinite}
 .ud-cursor-ring text{font-family:var(--font-body);font-weight:700;font-size:10.5px;fill:var(--orange)}
 @keyframes ud-ring-spin{to{transform:rotate(360deg)}}
