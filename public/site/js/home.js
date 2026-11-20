@@ -12,7 +12,7 @@ function Home() {
       items: ['Websites', 'Video', 'Motion Graphics', 'Graphic Design']
     }),
     media: React.createElement(HeroVid, {
-      src: "site/video/home-hero.mp4"
+      src: "site/video/home-hero-v2.mp4"
     })
   }, React.createElement("a", {
     className: "tlink",
