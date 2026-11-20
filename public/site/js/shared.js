@@ -469,10 +469,17 @@ function Page({
     feather.replace({
       'stroke-width': 1.5
     });
-    UDMotion.enter();
-    UDMotion.init(document, {
-      observeDelay: 450
-    });
+    // While the splash screen is playing, skip the page wipe and start the
+    // reveal animations straight away, so they finish underneath the splash
+    // and the hero text is already in place when it lifts.
+    if (document.documentElement.classList.contains('ud-splash-active')) {
+      UDMotion.init(document);
+    } else {
+      UDMotion.enter();
+      UDMotion.init(document, {
+        observeDelay: 450
+      });
+    }
     const glowOff = letterGlow();
     const nav = document.getElementById('nav');
     let last = scrollY;
