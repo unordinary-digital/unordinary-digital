@@ -276,3 +276,6 @@ a{color:var(--charcoal);text-decoration:none}a:hover{color:var(--charcoal)}
 .ud-cursor-ring svg{width:100%;height:100%;display:block;overflow:visible;animation:ud-ring-spin 9s linear infinite}
 .ud-cursor-ring text{font-family:var(--font-body);font-weight:700;font-size:10.5px;fill:var(--orange)}
 @keyframes ud-ring-spin{to{transform:rotate(360deg)}}
+/* Letters of the ring that sit on a light background switch to charcoal */
+.ud-cursor-ring tspan{transition:fill .25s var(--ease-standard)}
+.ud-cursor-ring tspan.is-dark{fill:#454545}
