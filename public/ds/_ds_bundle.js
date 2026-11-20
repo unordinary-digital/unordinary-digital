@@ -943,7 +943,11 @@ API: UDMotion.init(root,{observeDelay}), .transition(fn), .enter(), .replay(el),
       S.auto = f;
     }
   };
-  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', () => init()) : init();
+  // Only start up if the site hasn't loaded its own motion script (site/motion.js),
+  // which replaces window.UDMotion; otherwise both would run and draw two cursors.
+  const own = window.UDMotion;
+  const start = () => { if (window.UDMotion === own) init(); };
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', start) : start();
 })();
 })(); } catch (e) { __ds_ns.__errors.push({ path: "motion/motion.js", error: String((e && e.message) || e) }); }
 

@@ -577,12 +577,19 @@ function ScrollHero({
     const el = ref.current;
     let raf;
     const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    // The hero only expands on wider screens; below 900px it's a static layout.
+    const wide = matchMedia('(min-width: 901px)');
     const on = () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
         const r = el.getBoundingClientRect();
         const p = Math.min(1, Math.max(0, -r.top / (innerHeight * 1.12)));
         el.style.setProperty('--p', ease(p).toFixed(4));
+        // Tells the cursor to show its "keep scrolling" ring until the section
+        // below the hero starts to come into view.
+        const next = el.nextElementSibling;
+        const before = next ? next.getBoundingClientRect().top >= innerHeight - 1 : p < .995;
+        document.documentElement.classList.toggle('ud-hero-expanding', wide.matches && before);
       });
     };
     on();
@@ -593,6 +600,8 @@ function ScrollHero({
     return () => {
       removeEventListener('scroll', on);
       removeEventListener('resize', on);
+      cancelAnimationFrame(raf);
+      document.documentElement.classList.remove('ud-hero-expanding');
     };
   }, []);
   return React.createElement("section", {
