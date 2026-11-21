@@ -22,7 +22,7 @@ function Home() {
     }
   }, React.createElement(SecHead, {
     label: "What we do",
-    title: "Two things, done properly."
+    title: "Things done properly."
   }), React.createElement("div", {
     className: "svc-grid",
     "data-hover-preview": true
