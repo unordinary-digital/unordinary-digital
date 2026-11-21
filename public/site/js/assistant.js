@@ -60,7 +60,7 @@ function Assistant() {
   }, "Pricing"), React.createElement("h2", {
     className: "big-h2",
     "data-split": true
-  }, React.createElement(Dot, null, "\xA32,225 a month."))), React.createElement("div", {
+  }, React.createElement(Dot, null, "\xA33,200 a month."))), React.createElement("div", {
     className: "copy"
   }, React.createElement("p", {
     "data-reveal": true

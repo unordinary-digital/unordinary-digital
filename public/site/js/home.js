@@ -104,7 +104,7 @@ function Home() {
     className: "copy"
   }, React.createElement("p", {
     "data-reveal": true
-  }, "unordinary.assistant is a monthly retainer. Up to 120 hours a month (30 hours a week) across anything we do, for \xA32,225. One studio, ready when you need it."), React.createElement("a", {
+  }, "unordinary.assistant is a monthly retainer. Up to 120 hours a month (30 hours a week) across anything we do, for \xA33,200. One studio, ready when you need it."), React.createElement("a", {
     className: "tlink",
     href: "/assistant",
     "data-reveal": true,
