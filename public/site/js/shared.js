@@ -646,28 +646,44 @@ function HeroVid({
   src
 }) {
   const ref = React.useRef(null);
+  // While the splash screen is showing, hold the video on its first frame
+  // and start it the moment the splash finishes (or is skipped).
+  const [held] = React.useState(() => document.documentElement.classList.contains('ud-splash-active'));
   React.useEffect(() => {
     const v = ref.current;
     let url;
+    let waiting = held && document.documentElement.classList.contains('ud-splash-active');
+    const play = () => {
+      if (!waiting) v.play().catch(() => {});
+    };
+    const release = () => {
+      waiting = false;
+      v.currentTime = 0;
+      play();
+    };
     const blob = () => fetch(src).then(r => r.blob()).then(b => {
       url = URL.createObjectURL(b);
       v.src = url;
-      v.play().catch(() => {});
+      play();
     });
     v.addEventListener('error', blob, {
       once: true
     });
+    if (waiting) window.addEventListener('ud:splash:done', release, {
+      once: true
+    });
     v.src = src;
-    v.play().catch(() => {});
+    play();
     return () => {
       v.removeEventListener('error', blob);
+      window.removeEventListener('ud:splash:done', release);
       if (url) URL.revokeObjectURL(url);
     };
   }, [src]);
   return React.createElement("video", {
     ref: ref,
     className: "hh-video",
-    autoPlay: true,
+    autoPlay: !held,
     muted: true,
     loop: true,
     playsInline: true,
