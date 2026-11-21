@@ -205,7 +205,7 @@ a{color:var(--charcoal);text-decoration:none}a:hover{color:var(--charcoal)}
 .menu .menu-sub a{font-family:var(--font-body);font-weight:500;font-size:min(clamp(18px,3.4vw,24px),3.4vh);line-height:1.3;letter-spacing:0}
 .ilink{border-bottom:1px solid currentColor;padding-bottom:1px;transition:border-color var(--duration-base) var(--ease-standard)}
 .ilink:hover{border-color:var(--orange)}
-.text-sec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6vw;padding:0 6vw;align-items:end}
+.text-sec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6vw;padding:0 6vw;align-items:start}
 .text-sec .h2{max-width:12ch}
 .text-sec p{font-size:clamp(17px,1.4vw,21px);max-width:44ch;text-wrap:pretty}
 .text-sec .copy{display:grid;gap:24px;justify-items:start}
@@ -279,3 +279,6 @@ a{color:var(--charcoal);text-decoration:none}a:hover{color:var(--charcoal)}
 /* Letters of the ring that sit on a light background switch to charcoal */
 .ud-cursor-ring tspan{transition:fill .25s var(--ease-standard)}
 .ud-cursor-ring tspan.is-dark{fill:#454545}
+/* FAQ sections tuck up under a section with the same background, but keep
+   full spacing when the section above has a different background */
+:not(.panel)+.faq-sec{padding-top:0}

@@ -81,10 +81,7 @@ function Website() {
     panel: true,
     paras: ["A business website has a few jobs. Say what you do, show it's real and make it easy to get in touch. We build around those, then make sure it loads quickly and works properly on a phone, because that's where most people will see it.", "The standard site includes search groundwork and analytics, so Google can read it and the right people can find it. For a local business that also means accurate details and a Google Business Profile that matches the website. We're based in Liverpool and work with businesses across the city and the North West, and we work further afield too.", React.createElement(React.Fragment, null, "Need video or design to go with it? We do ", React.createElement(Ilink, {to: "/video"}, "video"), ", ", React.createElement(Ilink, {to: "/graphic"}, "graphic design"), " and ", React.createElement(Ilink, {to: "/print"}, "print"), " as well, so everything matches.")]
   }), React.createElement("section", {
-    className: "sec",
-    style: {
-      paddingTop: 0
-    }
+    className: "sec faq-sec"
   }, React.createElement("div", {
     className: "faq"
   }, React.createElement("div", {

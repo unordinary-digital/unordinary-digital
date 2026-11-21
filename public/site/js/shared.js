@@ -721,10 +721,7 @@ function FaqSection({
 }) {
   const [open, setOpen] = React.useState(0);
   return React.createElement("section", {
-    className: "sec",
-    style: {
-      paddingTop: 0
-    }
+    className: "sec faq-sec"
   }, React.createElement("div", {
     className: "faq"
   }, React.createElement("div", {

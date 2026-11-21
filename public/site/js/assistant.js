@@ -101,10 +101,7 @@ function Assistant() {
   }), React.createElement(Rows, {
     items: steps
   })), React.createElement("section", {
-    className: "sec",
-    style: {
-      paddingTop: 0
-    }
+    className: "sec faq-sec"
   }, React.createElement("div", {
     className: "faq"
   }, React.createElement("div", {
