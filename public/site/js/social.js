@@ -1,3 +1,4 @@
+const pageFaqs = [["What's included each month?", "Four pieces of content, written copy for every post, and scheduling on up to two platforms. It's £350 a month."], ["Which platforms do you use?", "Instagram, YouTube and TikTok are the usual picks. We schedule on up to two."], ["Do I approve posts before they go out?", "Yes. You see everything before it goes out."], ["Can you include video?", "Yes. We edit video too, so it can be part of the mix."], ["Can I cancel?", "Yes, with 30 days' notice. It's billed monthly in advance."]];
 const gets = [['Four pieces of content', ''], ['Written copy for every post', ''], ['Scheduling on up to two platforms', '']];
 const steps = [['Brief.', 'Tell us about the business, who you want to reach and what you want to be known for.'], ['Plan.', 'We agree the platforms and the kind of content.'], ['Create.', "We write and make the month's content."], ['Approve.', 'You see it before it goes out.'], ['Post.', 'We schedule it and keep it going.']];
 function Social() {
@@ -52,7 +53,14 @@ function Social() {
     title: "How it works."
   }), React.createElement(Rows, {
     items: steps
-  })), React.createElement(Finale, {
+  })), React.createElement(TextSec, {
+    label: "Why it works",
+    title: "Consistent beats loud.",
+    panel: true,
+    paras: ["A feed that posts steadily tends to do more for a business than one with a burst of activity and then silence. Four good pieces a month is something most businesses can keep up. We write them, make them and schedule them, so it keeps happening.", "Content works best when it's tied to something real in the business, which is why the brief comes first. We're a Liverpool studio, so we know the city your customers are in.", React.createElement(React.Fragment, null, "Want it to work harder? Pair it with a ", React.createElement(Ilink, {to: "/google-business-profile"}, "Google Business Profile"), " so people who search for you find an active listing, or add ", React.createElement(Ilink, {to: "/video"}, "video"), " to the mix.")]
+  }), React.createElement(FaqSection, {
+    items: pageFaqs
+  }), React.createElement(Finale, {
     title: "Want your socials sorted?",
     body: "Tell us what the business does and where your customers are. We'll come back with a price."
   }));

@@ -1,6 +1,7 @@
 const pkgs = [['One-pager', 'from', '£950', '', ['One page, everything on it', 'Copy written with you', 'Contact form and enquiry alerts', 'Live in about two weeks']], ['Standard site', 'from', '£2,400', '', ['Up to six pages', 'Blog or work section', 'Search groundwork and analytics', 'Live in about four weeks']], ['Care plan', '', '£225', 'a month', ['Hosting, domains and renewals', 'Google Business Profile posting', 'Small changes, up to five hours a month', 'Backups and updates checked', 'Cancel whenever you like'], true]];
 const steps = [['Brief.', 'We talk. You tell us what the site needs to do.'], ['Quote.', 'You get a fixed price in writing and a clear scope.'], ['Design and build.', 'We make it. You review it.'], ['Revisions.', "We refine it until it's right."], ['Launch.', 'It goes live, on the date we agreed.']];
 const faqs = [['How long does a site take?', 'A one-pager is live in about two weeks. A standard site takes about four to six.'], ['What will my site be built on?', 'Whatever suits the job. We choose the platform for each project and explain why before we start.'], ['Do you write the copy?', "On a one-pager, we write it with you. For anything bigger, tell us what you need and we'll quote it."], ['What does the care plan cover?', "Hosting, domains and renewals, Google Business Profile posting, small changes up to five hours a month, and backups and updates checked. It's £225 a month, and you can cancel whenever you like."], ['What if I need more than six pages?', "Tell us what you need and we'll quote it. The prices above are where we start, not where we stop."]];
+faqs.push(...[["Can the site have a blog or a work section?", "Yes. The standard site includes one."], ["Do I need a Google Business Profile as well?", "It helps. For a local business it's often the first thing people see in a search. Posting is included in the care plan, or we can look after the profile on its own."], ["Can you build a site for a business outside Liverpool?", "Yes. We're based in Liverpool and mostly work in the city and the North West, but we work with companies further afield too."]]);
 function Faq() {
   const [open, setOpen] = React.useState(0);
   return React.createElement("div", {
@@ -74,7 +75,12 @@ function Website() {
     title: "How it works."
   }), React.createElement(Rows, {
     items: steps
-  })), React.createElement("section", {
+  })), React.createElement(TextSec, {
+    label: "What you get",
+    title: "A site that does a job.",
+    panel: true,
+    paras: ["A business website has a few jobs. Say what you do, show it's real and make it easy to get in touch. We build around those, then make sure it loads quickly and works properly on a phone, because that's where most people will see it.", "The standard site includes search groundwork and analytics, so Google can read it and the right people can find it. For a local business that also means accurate details and a Google Business Profile that matches the website. We're based in Liverpool and work with businesses across the city and the North West, and we work further afield too.", React.createElement(React.Fragment, null, "Need video or design to go with it? We do ", React.createElement(Ilink, {to: "/video"}, "video"), ", ", React.createElement(Ilink, {to: "/graphic"}, "graphic design"), " and ", React.createElement(Ilink, {to: "/print"}, "print"), " as well, so everything matches.")]
+  }), React.createElement("section", {
     className: "sec",
     style: {
       paddingTop: 0

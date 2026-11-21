@@ -1,3 +1,4 @@
+const pageFaqs = [["What do you need from me?", "The footage, and a note on where it's going and what it needs to do. We take it from there."], ["How long does an edit take?", "A simple edit usually takes 2-3 days and a standard edit 3-5. Premium edits depend on the job, and we agree the turnaround in the quote."], ["Do you add captions?", "Yes. Captions are part of the simple edit and built into how we cut for social, since plenty of people watch with the sound off."], ["Can you cut short clips from a long video?", "Yes. Every long-form edit can come with clips for Instagram, YouTube Shorts and TikTok."], ["Which formats do you deliver?", "Files in the right format and ratio for each platform."]];
 const feed = [['Instagram', 'Reels and Stories, cut vertical and captioned.'], ['YouTube', 'Shorts and long-form, with proper pacing and clean sound.'], ['TikTok', 'short, fast and native to the platform.']];
 const levels = [['Simple edit', 'One clip, clean cuts, captions and music. Quick turnaround, usually 2-3 days.'], ['Standard edit', 'Multi-clip edits with colour correction, a proper sound mix and your branded intro and outro. Usually 3-5 days.'], ['Premium edit', 'Motion graphics, animated branding and multiple revision rounds. For work that needs to look the part.']];
 const steps = [['Send the footage.', 'Tell us which platforms it\'s for and what it needs to do.'], ['Quote.', 'Fixed price, clear turnaround.'], ['Edit.', 'We cut it, grade it and mix it.'], ['Revisions.', 'You give feedback. We fix it.'], ['Delivery.', 'Files in the right format and ratio for each platform.']];
@@ -113,7 +114,14 @@ function Video() {
     title: "How it works."
   }), React.createElement(Rows, {
     items: steps
-  })), React.createElement(Finale, {
+  })), React.createElement(TextSec, {
+    label: "How we edit",
+    title: "Cut for the people watching.",
+    panel: true,
+    paras: ["Good editing is mostly decisions: what to keep, what to cut and where the viewer's attention is at every second. We start with the platform and the purpose, then cut to suit, so a Reel, a YouTube episode and a brand film each get what they need.", React.createElement(React.Fragment, null, "Send us what you've shot, from a phone or a camera, and we'll work with it. We're a Liverpool studio working with businesses across the North West and beyond. If you also need a website or social content, it comes from the same studio. See ", React.createElement(Ilink, {to: "/website"}, "Website"), " and ", React.createElement(Ilink, {to: "/social"}, "Social media"), ".")]
+  }), React.createElement(FaqSection, {
+    items: pageFaqs
+  }), React.createElement(Finale, {
     title: "Got footage sitting on a hard drive?",
     body: "Send it over. We'll tell you what we can do with it."
   }));

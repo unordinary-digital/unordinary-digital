@@ -679,10 +679,88 @@ const slot = (id, label) => React.createElement("image-slot", {
   shape: "rect",
   placeholder: label
 });
+const Ilink = ({
+  to,
+  children
+}) => React.createElement("a", {
+  className: "ilink",
+  href: to,
+  "data-transition": true
+}, children);
+function TextSec({
+  label,
+  title,
+  paras,
+  panel
+}) {
+  return React.createElement("section", {
+    className: 'sec' + (panel ? ' panel' : '')
+  }, React.createElement("div", {
+    className: "text-sec"
+  }, React.createElement("div", {
+    className: "sec-head",
+    style: {
+      padding: 0,
+      margin: 0
+    }
+  }, label && React.createElement("p", {
+    className: "label",
+    "data-reveal": true
+  }, label), React.createElement("h2", {
+    className: "h2",
+    "data-split": true
+  }, React.createElement(Dot, null, title))), React.createElement("div", {
+    className: "copy"
+  }, paras.map((t, i) => React.createElement("p", {
+    key: i,
+    "data-reveal": true
+  }, t)))));
+}
+function FaqSection({
+  items
+}) {
+  const [open, setOpen] = React.useState(0);
+  return React.createElement("section", {
+    className: "sec",
+    style: {
+      paddingTop: 0
+    }
+  }, React.createElement("div", {
+    className: "faq"
+  }, React.createElement("div", {
+    className: "sec-head",
+    style: {
+      padding: 0
+    }
+  }, React.createElement("h2", {
+    "data-split": true
+  }, "FAQ")), React.createElement("div", {
+    className: "faq-list"
+  }, items.map(([q, a], i) => React.createElement("div", {
+    key: i,
+    "data-reveal": true,
+    style: {
+      transitionDelay: i * .06 + 's'
+    }
+  }, React.createElement("div", {
+    className: open === i ? 'open' : ''
+  }, React.createElement("button", {
+    className: "faq-q",
+    onClick: () => setOpen(open === i ? -1 : i),
+    "aria-expanded": open === i
+  }, q, React.createElement("span", {
+    className: "pm"
+  })), React.createElement("div", {
+    className: "faq-a"
+  }, React.createElement("div", null, React.createElement("p", null, a)))))))));
+}
 function mount(el) {
   ReactDOM.createRoot(document.getElementById('root')).render(el);
 }
 Object.assign(window, {
+  Ilink,
+  TextSec,
+  FaqSection,
   HIDDEN,
   UD,
   NAV,
