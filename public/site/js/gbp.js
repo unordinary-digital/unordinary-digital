@@ -38,7 +38,7 @@ function GBP() {
     className: "copy"
   }, React.createElement("h2", null, React.createElement(Dot, null, "Part of the care plan.")), React.createElement("p", null, "Google Business Profile posting is included in the website care plan: \xA3225 a month, alongside hosting, domains and renewals, small changes, and backups. See ", React.createElement("a", {
     className: "ilink",
-    href: "website.html#packages",
+    href: "/website#packages",
     "data-transition": true
   }, "Website"), ".")))), React.createElement("div", {
     "data-reveal": true,

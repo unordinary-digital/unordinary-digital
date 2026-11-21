@@ -30,7 +30,7 @@ function Home() {
     key: n,
     className: "ud-fill-row svc",
     "data-hover": true,
-    href: h,
+    href: U(h),
     "data-transition": true,
     "data-preview": n === '01' ? 'Website project' : 'Video still',
     "data-preview-img": n === '01' ? 'site/img/website-project.webp' : 'site/img/video-still.webp'
@@ -79,7 +79,7 @@ function Home() {
       }
     }, h ? React.createElement("a", {
       className: "ar-item",
-      href: h,
+      href: U(h),
       "data-transition": true
     }, inner) : React.createElement("div", {
       className: "ar-item"
@@ -106,7 +106,7 @@ function Home() {
     "data-reveal": true
   }, "unordinary.assistant is a monthly retainer. Up to 120 hours a month (30 hours a week) across anything we do, for \xA32,225. One studio, ready when you need it."), React.createElement("a", {
     className: "tlink",
-    href: "assistant.html",
+    href: "/assistant",
     "data-reveal": true,
     "data-transition": true
   }, "See unordinary.assistant")))), React.createElement("section", {

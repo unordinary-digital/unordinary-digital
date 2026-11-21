@@ -23,7 +23,7 @@ function Social() {
     "data-reveal": true
   }, "Instagram, YouTube and TikTok are the usual picks. Want video in the mix? We edit that too. See ", React.createElement("a", {
     className: "ilink",
-    href: "video.html",
+    href: "/video",
     "data-transition": true
   }, "Video & Motion"), ".")), React.createElement("section", {
     className: "sec panel"

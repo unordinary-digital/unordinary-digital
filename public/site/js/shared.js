@@ -1,5 +1,6 @@
 const UD = window.UnordinaryDigitalDesignSystem_709a4c;
 const HIDDEN = [];
+const U = h => h === 'index.html' ? '/' : (h || '').replace(/^([a-z-]+)\.html/, '/$1');
 const SERVICES = [['podcast.html', 'Podcast editing'], ['social.html', 'Social media'], ['graphic.html', 'Graphic design'], ['print.html', 'Print design'], ['google-business-profile.html', 'Google Business Profile'], ['assistant.html', 'unordinary.assistant']].filter(([h]) => !HIDDEN.includes(h));
 const NAV = [['website.html', 'Website'], ['video.html', 'Video & Motion'], ...SERVICES, ['liverpool.html', 'Liverpool'], ['contact.html', 'Contact']];
 const MENU = [['website.html', 'Website'], ['video.html', 'Video & Motion']];
@@ -55,7 +56,7 @@ function ThemeToggle() {
   })));
 }
 const go = h => UDMotion.transition(() => {
-  location.href = h;
+  location.href = U(h);
 });
 function Dot({
   children
@@ -102,7 +103,7 @@ function Nav({
     className: 'nav' + (open ? ' is-menu' : ''),
     id: "nav"
   }, React.createElement("a", {
-    href: "index.html",
+    href: "/",
     "data-transition": true,
     className: "nav-logo"
   }, React.createElement("img", {
@@ -113,7 +114,7 @@ function Nav({
   }, MENU.map(([h, l]) => React.createElement("a", {
     key: h,
     className: 'nl' + (current === h ? ' is-current' : ''),
-    href: h,
+    href: U(h),
     "data-transition": true
   }, l)), React.createElement("div", {
     className: "dd"
@@ -133,12 +134,12 @@ function Nav({
     className: "dd-menu"
   }, SERVICES.map(([h, l]) => React.createElement("a", {
     key: h,
-    href: h,
+    href: U(h),
     className: current === h ? 'is-current' : '',
     "data-transition": true
   }, l)))), React.createElement("a", {
     className: 'nl' + (current === 'contact.html' ? ' is-current' : ''),
-    href: "contact.html",
+    href: "/contact",
     "data-transition": true
   }, "Contact"), React.createElement(ThemeToggle, null), React.createElement("span", {
     style: {
@@ -152,22 +153,22 @@ function Nav({
     className: 'menu' + (open ? ' is-open' : ''),
     "aria-hidden": !open
   }, React.createElement("a", {
-    href: "index.html",
+    href: "/",
     "data-transition": true
   }, "Home"), MENU.map(([h, l]) => React.createElement("a", {
     key: h,
-    href: h,
+    href: U(h),
     className: current === h ? 'is-current' : '',
     "data-transition": true
   }, l)), React.createElement("div", {
     className: "menu-sub"
   }, SERVICES.map(([h, l]) => React.createElement("a", {
     key: h,
-    href: h,
+    href: U(h),
     className: current === h ? 'is-current' : '',
     "data-transition": true
   }, l))), React.createElement("a", {
-    href: "contact.html",
+    href: "/contact",
     className: current === 'contact.html' ? 'is-current' : '',
     "data-transition": true
   }, "Contact"), React.createElement("div", {
@@ -298,7 +299,7 @@ function Finale({
   }))), React.createElement("div", {
     className: "foot-grid wrap"
   }, React.createElement("div", null, React.createElement("a", {
-    href: "index.html",
+    href: "/",
     "data-transition": true
   }, React.createElement("img", {
     className: "foot-logo",
@@ -310,13 +311,13 @@ function Finale({
     className: "foot-col"
   }, NAV.filter(([h]) => !SERVICES.some(([s]) => s === h)).map(([h, l]) => React.createElement("a", {
     key: h,
-    href: h,
+    href: U(h),
     "data-transition": true
   }, l))), React.createElement("div", {
     className: "foot-col"
   }, SERVICES.map(([h, l]) => React.createElement("a", {
     key: h,
-    href: h,
+    href: U(h),
     "data-transition": true
   }, l))), React.createElement("div", {
     className: "foot-col"
@@ -335,7 +336,7 @@ function Finale({
   }, React.createElement("span", {
     className: "foot-legal"
   }, React.createElement("span", null, "\xA9 2026 unordinary. digital"), React.createElement("a", {
-    href: "privacy.html",
+    href: "/privacy",
     "data-transition": true
   }, "Privacy policy"), React.createElement("button", {
     type: "button",
@@ -450,7 +451,7 @@ function ConsentBanner() {
     role: "dialog",
     "aria-label": "Cookie choices"
   }, React.createElement("p", null, "Can we use analytics cookies? They tell us which pages people find useful. Nothing is set unless you say yes. ", React.createElement("a", {
-    href: "privacy.html"
+    href: "/privacy"
   }, "Privacy policy")), React.createElement("div", {
     className: "consent-btns"
   }, React.createElement(UD.Button, {
