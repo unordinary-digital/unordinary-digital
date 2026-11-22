@@ -282,3 +282,24 @@ a{color:var(--charcoal);text-decoration:none}a:hover{color:var(--charcoal)}
 /* FAQ sections tuck up under a section with the same background, but keep
    full spacing when the section above has a different background */
 :not(.panel)+.faq-sec{padding-top:0}
+/* Blog: list page */
+.post-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr));gap:8vh 4vw;padding:2vh 6vw 16vh}
+.post-card{display:grid;gap:14px;align-content:start;color:inherit;text-decoration:none}
+.post-card-img{display:block;aspect-ratio:16/9;border-radius:var(--radius-lg);overflow:hidden;background:var(--light-grey);margin-bottom:10px}
+.post-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform var(--duration-slow) var(--ease-out-expo)}
+.post-card:hover .post-card-img img{transform:scale(1.04)}
+.post-card-t{font-family:var(--font-display);font-weight:800;font-size:clamp(24px,2.2vw,34px);line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
+.post-card-x{font-size:var(--text-base);max-width:48ch;text-wrap:pretty}
+.post-card .tlink{justify-self:start;margin-top:6px}
+.post-meta{font-size:var(--text-sm);opacity:.72}
+/* Blog: post page */
+.post-head{padding-top:clamp(120px,18vh,200px);padding-bottom:7vh}
+.post-head .eyebrow a{color:inherit;text-decoration:none}
+.post-head .eyebrow a:hover{color:var(--orange)}
+.post-title{font-size:clamp(40px,5.2vw,88px);line-height:.98;letter-spacing:-.02em;font-weight:800;max-width:18ch;text-wrap:balance;margin:0 0 4vh}
+.post-body .post-lead{font-size:clamp(20px,1.8vw,26px);line-height:1.4;font-weight:500;margin-bottom:24px}
+.post-body figure{margin:8px 0 28px}
+.post-body figure img{display:block;width:100%;height:auto;border-radius:var(--radius-lg)}
+.post-body a.post-cta{display:inline-flex;align-items:center;padding:14px 28px;border-radius:var(--radius-pill);background:var(--orange);color:#454545;font-weight:600;text-decoration:none;margin-top:8px;transition:transform var(--duration-medium) var(--ease-out-expo)}
+.post-body a.post-cta:hover{transform:translateY(-2px)}
+.post-body .post-credit{font-size:var(--text-sm);opacity:.75;margin-top:56px;padding-top:24px;border-top:1px solid color-mix(in oklch,currentColor 20%,transparent)}

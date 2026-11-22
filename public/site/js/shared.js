@@ -2,7 +2,7 @@ const UD = window.UnordinaryDigitalDesignSystem_709a4c;
 const HIDDEN = [];
 const U = h => h === 'index.html' ? '/' : (h || '').replace(/^([a-z-]+)\.html/, '/$1');
 const SERVICES = [['podcast.html', 'Podcast editing'], ['social.html', 'Social media'], ['graphic.html', 'Graphic design'], ['print.html', 'Print design'], ['google-business-profile.html', 'Google Business Profile'], ['assistant.html', 'unordinary.assistant']].filter(([h]) => !HIDDEN.includes(h));
-const NAV = [['website.html', 'Website'], ['video.html', 'Video & Motion'], ...SERVICES, ['liverpool.html', 'Liverpool'], ['contact.html', 'Contact']];
+const NAV = [['website.html', 'Website'], ['video.html', 'Video & Motion'], ...SERVICES, ['liverpool.html', 'Liverpool'], ['/blog/', 'Blog'], ['contact.html', 'Contact']];
 const MENU = [['website.html', 'Website'], ['video.html', 'Video & Motion']];
 const getTheme = () => document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
 function useTheme() {
