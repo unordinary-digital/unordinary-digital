@@ -1,6 +1,14 @@
 // Blog posts, newest first. Each post also has its own page at
 // blog/<slug>.html holding the full article (see blog/phone-video-tips.html).
 const POSTS = [{
+  slug: 'how-to-set-up-your-phone-camera-for-video',
+  title: 'How to set up your phone camera for the best possible video',
+  excerpt: "Your phone camera is better than you think. Here's how to lock focus, exposure and white balance, and set it up properly before you press record.",
+  date: '2026-11-24',
+  read: '8 min read',
+  cover: 'site/img/blog/how-to-set-up-your-phone-camera-for-video/01-lock-focus-exposure-white-balance.webp',
+  coverAlt: 'Three cards showing focus, exposure and white balance icons, each with a padlock'
+}, {
   slug: 'phone-video-tips',
   title: 'Phone video tips: how to film yourself without it looking rubbish',
   excerpt: 'Most phone videos go wrong before anyone presses record. Fixes for sound, framing and light that take five minutes.',

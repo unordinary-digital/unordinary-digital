@@ -249,8 +249,12 @@ a{color:var(--charcoal);text-decoration:none}a:hover{color:var(--charcoal)}
 }
 .prose{max-width:72ch;padding-bottom:16vh;font-size:var(--text-base);line-height:1.65}
 .prose h2{font-size:clamp(22px,2vw,30px);line-height:1.15;font-weight:800;letter-spacing:-.01em;margin:56px 0 16px}
-.prose p,.prose ul{margin:0 0 16px}
-.prose ul{padding-left:1.2em}
+.prose h3{font-size:clamp(18px,1.5vw,22px);line-height:1.2;font-weight:700;margin:36px 0 12px}
+.prose p,.prose ul,.prose ol{margin:0 0 16px}
+.prose ul,.prose ol{padding-left:1.2em}
+.prose table{width:100%;border-collapse:collapse;margin:0 0 24px;font-size:var(--text-sm)}
+.prose th,.prose td{text-align:left;padding:10px 12px;border-bottom:1px solid color-mix(in oklch,currentColor 20%,transparent)}
+.prose th{font-family:var(--font-display);font-weight:700}
 .prose li{margin-bottom:8px}
 .prose a{text-decoration:underline;text-decoration-color:var(--orange);text-underline-offset:4px;word-break:break-word}
 .foot-legal{display:inline-flex;gap:20px;flex-wrap:wrap}
